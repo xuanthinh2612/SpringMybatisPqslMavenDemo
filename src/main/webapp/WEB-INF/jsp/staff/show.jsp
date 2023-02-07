@@ -15,23 +15,49 @@
 </head>
 <body>
 
-<%@ include file="../common/navigation.jsp"%>
-
-
-<div class="container">
-     <h1>
-        Staff details
-    </h1>
-    <table>
-            <tr>
-             <td>${staff}</td>
-            </tr>
-    </table>
-</div>
- 
-<%@ include file="../common/footer.jsp"%>
-
-
-</body>
+    <%@ include file="../common/navigation.jsp" %>
+    
+    
+        <div class="container">
+            <h1>
+                Staff details
+            </h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Properties</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>Full Name</td>
+                        <td>${staff.fullName}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>User</td>
+                        <td>${staff.katakanaName}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>Email</td>
+                        <td>${staff.email}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>Password</td>
+                        <td>${staff.password}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <%@ include file="../common/footer.jsp" %>
+    
+    
+    </body>
 
 </html>
