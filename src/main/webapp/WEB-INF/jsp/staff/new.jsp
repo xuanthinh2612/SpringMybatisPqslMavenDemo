@@ -24,47 +24,47 @@
 
     <body>
 
-        <%@ include file="../common/navigation.jsp" %>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 ">
-                        <div class="panel panel-primary">
-                            <h1>
-                                Staff Regestration Form
-                            </h1>
-                            <div class="panel-body">
-                                <form:form method="post" modelAttribute="staff">
-                                    <form:hidden path="id" />
-                                    <fieldset class="form-group">
-                                        <form:label path="fullName">Full Name</form:label>
-                                        <form:input path="fullName" type="text" class="form-control" />
-                                        <form:errors path="fullName" cssClass="text-danger" />
-                                    </fieldset>
+    <%@ include file="../common/navigation.jsp" %>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 ">
+                    <div class="panel panel-primary">
+                        <h1>
+                            Staff Regestration Form
+                        </h1>
+                        <div class="panel-body">
+                            <form:form method="post" modelAttribute="staff">
+                                <form:hidden path="id" />
+                                <fieldset class="form-group">
+                                    <form:label path="fullName">Full Name</form:label>
+                                    <form:input path="fullName" type="text" class="form-control" />
+                                    <form:errors path="fullName" cssClass="text-danger" />
+                                </fieldset>
 
-                                    <fieldset class="form-group">
-                                        <form:label path="katakanaName">User</form:label>
-                                        <form:input path="katakanaName" type="text" class="form-control"/>
-                                        <form:errors path="katakanaName" cssClass="text-danger" />
-                                    </fieldset>
-                                    <fieldset class="form-group">
-                                        <form:label path="password">PassWord</form:label>
-                                        <form:input path="password" type="text" class="form-control"/>
-                                        <form:errors path="password" cssClass="text-danger" />
-                                    </fieldset>
-                                    <fieldset class="form-group">
-                                        <form:label path="email">Email</form:label>
-                                        <form:input path="email" type="text" class="form-control"/>
-                                        <form:errors path="email" cssClass="text-danger" />
-                                    </fieldset>
-                                    <button type="submit" class="btn btn-success">Register</button>
-                                </form:form>
-                            </div>
+                                <fieldset class="form-group">
+                                    <form:label path="katakanaName">User</form:label>
+                                    <form:input path="katakanaName" type="text" class="form-control"/>
+                                    <form:errors path="katakanaName" cssClass="text-danger" />
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <form:label path="password">PassWord</form:label>
+                                    <form:input path="password" type="text" class="form-control"/>
+                                    <form:errors path="password" cssClass="text-danger" />
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <form:label path="email">Email</form:label>
+                                    <form:input path="email" type="text" class="form-control"/>
+                                    <form:errors path="email" cssClass="text-danger" />
+                                </fieldset>
+                                <button type="submit" class="btn btn-success">Register</button>
+                            </form:form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <%@ include file="../common/footer.jsp" %>
+        <%@ include file="../common/footer.jsp" %>
 
 
     </body>

@@ -34,6 +34,19 @@ public class Staff {
 		this.password = password;
 	}
 
+	public Staff(Long id,
+			@NotEmpty(message = "name can not be emty") @Size(max = 100, message = "name size maximum is 100") String fullName,
+			@NotEmpty(message = "kata name can not be empty") @Size(max = 50, message = "maximum saize is 50") String katakanaName,
+			@Email(message = "your email is not correct type") @NotEmpty(message = "email can not be emty") String email,
+			@NotEmpty(message = "password can not be emty") @Size(min = 6, max = 12, message = "password must be between 6 and 12") String password) {
+		super();
+		this.id = id;
+		this.fullName = fullName;
+		this.katakanaName = katakanaName;
+		this.email = email;
+		this.password = password;
+	}
+
 	public Long getId() {
 		return id;
 	}

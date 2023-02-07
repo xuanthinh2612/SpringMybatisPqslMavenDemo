@@ -29,4 +29,14 @@ public class StaffService {
 	public Staff findById(Long id) {
 		return staffMapper.findById(id);
 	}
+	
+	@Transactional
+	public void update(Staff staff) {
+		staffMapper.update(staff);
+	}
+	
+	@Transactional
+	public void delete(Long id) {
+		staffMapper.delete(id);
+	}
 }

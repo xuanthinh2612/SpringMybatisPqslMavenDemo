@@ -32,16 +32,29 @@
                 <td>${staff.katakanaName}</td>
                 <td>${staff.email}</td>
                 <td>${staff.password}</td>
-                <td>Update</td>
-                <td><i class="fa fa-trash" aria-hidden="true"></i></td>
-                <td>Delete</td>
+                <td> <a href="/staff/update/${staff.id}">Update</a></td>
+                <td><span onclick="confirmDelete('${staff.id}')">
+                    <button class="btn btn-danger">Delete</button>
+                </span></td>
             </tr>
               </c:forEach>
     
-    </table>
+    </table>  
 </div>
  
-<%@ include file="../common/footer.jsp"%>
+<script>
+    function confirmDelete(staff_id) {
+        let action = "/staff/delete/" + staff_id
+        let confirmResult =  confirm("Delete can not be undo! Continue? ")
+        if(confirmResult) {
+            let deleteForm = document.createElement("form");
+            deleteForm.action = action;
+            deleteForm.setAttribute("method", "post");
+            document.body.appendChild(deleteForm);
+            deleteForm.submit();
+        }
+    }
+</script>
 
 
 </body>

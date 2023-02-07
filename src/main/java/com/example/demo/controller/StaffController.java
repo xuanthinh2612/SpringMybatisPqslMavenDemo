@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.model.Staff;
@@ -39,8 +40,7 @@ public class StaffController {
 	}
 
 	@PostMapping("new")
-	public String createStaff(@ModelAttribute @Valid Staff staff, BindingResult bindingResult, 
-			Model model) {
+	public String createStaff(@ModelAttribute @Valid Staff staff, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			return "staff/new";
 		}
@@ -55,6 +55,27 @@ public class StaffController {
 		model.addAttribute("staff", staff);
 		return "staff/show";
 	}
-	
+
+	@GetMapping("update/{id}")
+	public String showUpdatePage(@PathVariable Long id, Model model) {
+		Staff staff = staffService.findById(id);
+		model.addAttribute("staff", staff);
+		return "staff/update";
+	}
+
+	@PostMapping("update")
+	public String updateStaff(@ModelAttribute @Valid Staff staff, BindingResult bindingResult, Model model) {
+		if (bindingResult.hasErrors()) {
+			return "/staff/update";
+		}
+		staffService.update(staff);
+		return "redirect:/staff/list";
+	}
+
+	@PostMapping("delete/{id}")
+	public String deleteStaff(@PathVariable Long id) {
+		staffService.delete(id);
+		return "redirect:/staff/list";
+	}
 
 }
