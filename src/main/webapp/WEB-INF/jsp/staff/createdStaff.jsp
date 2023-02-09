@@ -59,6 +59,11 @@
                     <td>Password</td>
                     <td>${staff.password}</td>
                 </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>Department</td>
+                    <td>${staff.getDepartmentId()}</td>
+                </tr>
             </tbody>
         </table>
     </div>

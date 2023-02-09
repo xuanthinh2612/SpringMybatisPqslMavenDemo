@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.model.Department;
 import com.example.demo.model.Staff;
+import com.example.demo.service.DepartmentService;
 import com.example.demo.service.StaffService;
 
 @Controller
@@ -22,6 +24,14 @@ public class StaffController {
 
 	@Autowired
 	StaffService staffService;
+
+	@Autowired
+	DepartmentService departmentService;
+
+	@ModelAttribute("departmentList")
+	public List<Department> sendDepartment() {
+		return departmentService.findAll();
+	}
 
 	@GetMapping("list")
 	public String listStaff(Model model) {

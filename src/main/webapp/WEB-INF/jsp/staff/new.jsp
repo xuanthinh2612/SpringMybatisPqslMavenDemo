@@ -56,6 +56,17 @@
                                     <form:input path="email" type="text" class="form-control"/>
                                     <form:errors path="email" cssClass="text-danger" />
                                 </fieldset>
+                                <fieldset class="form-group">
+                                    <form:label path="departmentId">Department</form:label>
+
+                                    <form:select path="departmentId" class="form-select">
+                                        <c:forEach items="${departmentList}" var="department">
+                                            <form:option value="${department.getId()}">${department.getName()}</form:option>
+                                        </c:forEach>
+                                    </form:select>
+                                    <form:errors path="departmentId" />
+
+                                </fieldset>
                                 <button type="submit" class="btn btn-success">Register</button>
                             </form:form>
                         </div>
